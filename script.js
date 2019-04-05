@@ -5,8 +5,8 @@ dataP.then(function(data){
 
 var drawChart = function(data){
 
-  var height = 600
-  var width = 500
+  var height = 600;
+  var width = 500;
 
   var xScale = d3.scaleLinear()
                   .domain([0,data.length])
