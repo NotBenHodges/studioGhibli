@@ -5,8 +5,8 @@ dataP.then(function(data){
 
 var drawChart = function(data){
 
-  var height = 600;
-  var width = 500;
+  var height = 500;
+  var width = 600;
 
   var xScale = d3.scaleLinear()
                   .domain([0,data.length])
@@ -14,7 +14,7 @@ var drawChart = function(data){
 
   var yScale = d3.scaleLinear()
                   .domain([0,100])
-                  .range([height,0]);
+                  .range([0,height]);
 
   var svg = d3.select('svg')
               .attr("height",height)
@@ -26,7 +26,9 @@ var drawChart = function(data){
                 .attr('x',function(d,i){
                   return xScale(i);
                 })
-                .attr('y',0)
+                .attr('y',function(d){
+                  return height - yScale(d.rt_score);
+                })
                 .attr('width',width/data.length)
                 .attr('height',function(d,i){
                   return yScale(d.rt_score);
