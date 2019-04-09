@@ -35,6 +35,19 @@ var drawChart = function(data){
                 })
                 .attr('fill','blue');
 
-
+  var labels = svg.select('text')
+                  .data(data)
+                  .enter()
+                  .append('text')
+                  .text(function(d){
+                    return d.rt_score;
+                  })
+                  .attr('y',function(d){
+                    return height - yScale(d.rt_score) + 20;
+                  })
+                  .attr('x',function(d,i){
+                    return xScale(i) + 5
+                  })
+                  .attr("fill","white")
 
 }
