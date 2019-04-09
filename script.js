@@ -33,7 +33,14 @@ var drawChart = function(data){
                 .attr('height',function(d,i){
                   return yScale(d.rt_score);
                 })
-                .attr('fill','navy');
+                .attr('fill','navy')
+                 .on('mouseover', function(d){
+                  d3.select(this)
+                  .attr("fill", "orange")})
+                  .on('mouseout', function(d){
+                    d3.select(this)
+                    .attr("fill", "navy");
+                });
 
   var labels = svg.select('text')
                   .data(data)
