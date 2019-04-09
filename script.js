@@ -29,7 +29,7 @@ var drawChart = function(data){
                 .attr('y',function(d){
                   return height - yScale(d.rt_score);
                 })
-                .attr('width',width/data.length)
+                .attr('width',width/data.length + 5)
                 .attr('height',function(d,i){
                   return yScale(d.rt_score);
                 })
