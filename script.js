@@ -33,7 +33,7 @@ var drawChart = function(data){
                 .attr('height',function(d,i){
                   return yScale(d.rt_score);
                 })
-                .attr('fill','blue');
+                .attr('fill','navy');
 
   var labels = svg.select('text')
                   .data(data)
